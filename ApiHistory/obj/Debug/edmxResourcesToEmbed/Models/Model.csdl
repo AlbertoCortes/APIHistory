@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataProductsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HistorialT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="videoName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="videoId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DataProductsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HistorialT" EntityType="Self.HistorialT" />
+    <FunctionImport Name="ACOB_InsertHistory">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="id_video" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ACOB_SelectHistory" ReturnType="Collection(DataProductsModel.ACOB_SelectHistory_Result)" />
+  </EntityContainer>
+  <ComplexType Name="ACOB_SelectHistory_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="videoName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="videoId" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataProductsModelStoreContainer" CdmEntityContainer="DataProductsEntities">
+    <EntitySetMapping Name="HistorialT">
+      <EntityTypeMapping TypeName="DataProductsModel.HistorialT">
+        <MappingFragment StoreEntitySet="HistorialT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="videoName" ColumnName="videoName" />
+          <ScalarProperty Name="videoId" ColumnName="videoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ACOB_InsertHistory" FunctionName="DataProductsModel.Store.ACOB_InsertHistory" />
+    <FunctionImportMapping FunctionImportName="ACOB_SelectHistory" FunctionName="DataProductsModel.Store.ACOB_SelectHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DataProductsModel.ACOB_SelectHistory_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="videoName" ColumnName="videoName" />
+          <ScalarProperty Name="videoId" ColumnName="videoId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
